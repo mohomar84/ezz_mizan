@@ -6,4 +6,5 @@ class Util:
       #  text = re.sub("ى", "ي", text)
       #  text = re.sub("ؤ", "ء", text)
       #  text = re.sub("ئ", "ء", text)
+
         return(text)

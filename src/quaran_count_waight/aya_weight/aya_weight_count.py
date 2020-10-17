@@ -1,11 +1,7 @@
 from quaran_count_waight.common.alphabets_weight import ArWeight
 
 
-# param
-aya = "في قلوبهم مرض فزادهم الله مرضا ولهم عذاب أليم بما كانوا يكذبون"
-
-
-def aya_weight(aya:str):
+def aya_weight(aya: str):
 
     all_words = aya.split(" ")
     total = 0
@@ -26,10 +22,12 @@ def aya_weight(aya:str):
 
 def get_word_count(one_word):
     total = 0
+
     for v in one_word:
-        weight = find_in_alph_weight(v)
+        single_alphabet = find_special_alphabet(v)
+        weight = find_in_alph_weight(single_alphabet)
         if weight is not None:
-            total += find_in_alph_weight(v)
+            total += find_in_alph_weight(single_alphabet)
         print("الحرف : ", v)
         print("الوزن: ", find_in_alph_weight(v))
     print(" اجمالي الكلمه: ", total)
@@ -42,4 +40,22 @@ def find_in_alph_weight(alpha):
             return d.value
 
 
-aya_weight(aya)
+def find_special_alphabet(character):
+    sp_alpha = ["إ", "أ", "ٱ", "آ", "ى", "ؤ", "ئ", "ة"]
+    for v in sp_alpha:
+        if v == character:
+            print(True, character)
+            return alphabet(character)
+    return character
+
+
+def alphabet(sp_alphabet):
+    a_alpha = ["إ", "أ", "ٱ", "آ"]
+    i_alpha = ["ى", "ؤ", "ئ", "ة"]
+    h_alpha = ["ة"]
+    if sp_alphabet in a_alpha:
+        return "ا"
+    if sp_alphabet in i_alpha:
+        return "ي"
+    if sp_alphabet in h_alpha:
+        return "ه"
