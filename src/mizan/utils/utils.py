@@ -1,4 +1,3 @@
-from mizan.aya_weight.aya_weight_count import alphabet
 from mizan.common.alpha_config import ArWeight
 
 
@@ -22,8 +21,7 @@ class Util:
         sp_alpha = ["إ", "أ", "ٱ", "آ", "ى", "ؤ", "ئ", "ة"]
         for v in sp_alpha:
             if v == character:
-                print(True, character)
-                return alphabet(character)
+                return Util.alphabet_origin(character)
         return character
 
     @staticmethod
