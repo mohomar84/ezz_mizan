@@ -5,6 +5,11 @@ class alphabet_weight:
 
     @staticmethod
     def aya_weight(aya: str):
+        """
+
+        :param aya:
+        :return:
+        """
 
         all_words = aya.split(" ")
         total = 0
@@ -14,7 +19,7 @@ class alphabet_weight:
             if i != '':
                 print("الكلمه : ", i)
                 one_word = list(i)
-                word_count = alphabet_weight.get_word_count(one_word)
+                word_count = alphabet_weight.get_word_weight(one_word)
                 words_count += 1
                 total += word_count
         print("-------------")
@@ -24,7 +29,12 @@ class alphabet_weight:
         print("-------------")
 
     @staticmethod
-    def get_word_count(one_word):
+    def get_word_weight(one_word):
+        """
+        get word by word alphabet weight in numbers and loop in word by word alphabets
+        :param one_word: arabic word
+        :return: total word weight in numbers
+        """
         total = 0
 
         for v in one_word:

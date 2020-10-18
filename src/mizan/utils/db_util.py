@@ -5,6 +5,12 @@ class DB_Utils:
 
     @staticmethod
     def get_aya(sura: int, aya: int):
+        """
+
+        :param sura:
+        :param aya:
+        :return:
+        """
         conn = sqlite3.connect('csc455_HW3.db')
 
         with open('../../DB_Quran/quran.sql', 'r') as sql_file:

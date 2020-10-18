@@ -5,6 +5,11 @@ class Util:
 
     @staticmethod
     def find_in_alph_weight(alpha):
+        """
+        get arabic alphabet weight in number
+        :param alpha: arabic alphabet
+        :return: arabic weight number
+        """
         for d in ArWeight:
             if alpha == d.name:
                 return d.value
